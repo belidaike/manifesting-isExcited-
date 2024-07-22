@@ -20,9 +20,9 @@ const Main = ({ similarMovies }) => {
             <div className={displayMoviesCSS}>
                 {displayMovies.length > 0 ? (
                     displayMovies.map((movie) => (
-                        <div className='main-content' onClick={() => nav(`/movie/${movie.id}`)} key={movie.id}>
+                        <div className='main-content' >
                             <div className="main-img-container">
-                                <img className='main-img' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+                                <img className='main-img' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" onClick={() => nav(`/movie/${movie.id}`)} key={movie.id} />
                             </div>
                             <div className="main-figure">
                                 <p>{movie.original_title}</p>

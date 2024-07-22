@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import Footer2 from '../../components/Footer2'
 import Header2 from '../../components/Header2'
 import { motion } from 'framer-motion'
-
+import Signups from '../../../public/signup.json'
+import Lottie from 'lottie-react'
 
 const Signup = () => {
     const onSubmit = () => {
@@ -45,8 +46,8 @@ const Signup = () => {
                         <input type="password" placeholder='Password' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
                     </div>
                     <div className="signup-button">
-                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/login'>Don't have an account?</Link>)}
-                        <button className="signup-btn">Login</button>
+                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/login' className='semi-btn'>Already have an account?</Link>)}
+                        <button className="signup-btn">Signup</button>
                     </div>
                 </motion.form>
 
@@ -65,7 +66,7 @@ const Signup = () => {
                         initial="hidden"
                         animate="visible"
                         transition={{ duration: 1.3 }}>
-                        <h1>icon here</h1>
+                        <Lottie className="div" animationData={Signups} />
                     </motion.div>
                 </motion.div>
             </div>

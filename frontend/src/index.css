@@ -69,6 +69,13 @@ a {
   overflow: hidden;
 }
 
+.semi-btn {
+  margin: 0 0 .5rem 0;
+}
+
+.semi-btn:hover {
+  text-decoration: underline;
+}
 
 /* header */
 header {
@@ -90,8 +97,25 @@ header {
   align-items: center;
 }
 
+.header-ul>li {
+  font-size: 1.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: .2rem;
+  padding: 1rem;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  background-color: var(--this30);
+  border-radius: .5rem;
+
+}
+
+
 .header-ul>li:hover {
   cursor: pointer;
+  background-color: var(--thisreal30);
+  transition: all 300ms ease-in;
+  border-radius: .5rem;
 }
 
 /* home */
@@ -146,6 +170,12 @@ main {
   padding: .5rem;
 }
 
+.main-figure p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: .1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 
 .main-img-container {
   overflow: hidden;
@@ -160,6 +190,7 @@ main {
 
 .main-img:hover {
   opacity: .7;
+  cursor: pointer;
   scale: 1.1;
   transition: all 200ms ease-in;
 }
@@ -231,6 +262,7 @@ aside>ul>li:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   justify-content: center;
   border-top-right-radius: 5em;
 }
@@ -238,6 +270,9 @@ aside>ul>li:hover {
 .login-form>h1 {
   text-align: center;
   font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: .5rem;
+  font-weight: 600;
 }
 
 .login-inputs {
@@ -266,7 +301,20 @@ aside>ul>li:hover {
   align-items: center;
   justify-content: space-around;
   font-size: 2rem;
+}
 
+.login-welcome>h1 {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.login-welcome>div {
+  display: flex;
+  justify-content: center;
+}
+
+.login-welcome>div>.div {
+  width: 45% !important;
 }
 
 .login-button {
@@ -298,7 +346,11 @@ aside>ul>li:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
 
+.signup-welcome>h1 {
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 .signup-content {
@@ -320,11 +372,15 @@ aside>ul>li:hover {
   justify-content: center;
   padding: 1rem;
   border-top-right-radius: 5em;
+  gap: 2rem;
 }
 
 .signup-form>h1 {
   text-align: center;
   font-size: 2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: .5rem;
+  font-weight: 600;
 }
 
 .signup-inputs {
@@ -355,6 +411,15 @@ aside>ul>li:hover {
   justify-content: space-around;
 }
 
+.signup-welcome>div {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-welcome>div>.div {
+  width: 70% !important;
+}
+
 .signup-button {
   display: flex;
   flex-direction: column;
@@ -377,7 +442,67 @@ aside>ul>li:hover {
 /* footer */
 footer {
   background-color: var(--this30);
-  padding: 1rem;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-container>* {
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container>div>h1 {
+  margin: 0 0 1rem 0;
+}
+
+.ft1 {
+  width: 40%;
+  font-size: 1.5rem;
+}
+
+.ft2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: .5rem;
+}
+
+.ft2>p>b {
+  font-size: 1.2rem;
+}
+
+em {
+  font-size: 1.2rem;
+}
+
+.ft2>h1,
+.ft3>h1,
+.ft4>h1 {
+  font-size: 1.5rem;
+}
+
+
+.ft3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: .5rem;
+}
+
+.ft4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: .5rem;
 }
 
 .footer2 {
@@ -385,19 +510,25 @@ footer {
   bottom: 3%;
 }
 
-.one {
-  background-color: #12372A;
+.reserves {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0 0 0;
+  gap: 1rem;
+
 }
 
-.two {
-  background-color: #436850;
+.reserves h1 {
+  font-size: 1.5rem;
 }
 
-.three {
-  background-color: #ADBC9F;
+.reserves hr {
+  width: 100%;
 }
 
-.four {}
+/** single movie */
 
 .s-movie-container {
   width: 80%;
@@ -507,7 +638,7 @@ footer {
   gap: 2rem;
   align-items: center;
   flex-direction: column;
-  background-color: var(--thisreal30);
+  background-image: linear-gradient(to right, var(--this30), var(--this60));
   padding: 3rem 0;
 }
 
@@ -542,7 +673,7 @@ footer {
   padding: .5rem .5rem .5rem 3rem;
   border-radius: .5rem;
   position: absolute;
-  top: 1.7rem;
+  top: 1.8rem;
 }
 
 
@@ -691,6 +822,11 @@ footer {
 }
 
 @media(max-width: 1023px) {
+  .ft1 {
+    width: 100%;
+  }
+
+
   .login-welcome {
     display: none;
   }

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import Footer2 from '../../components/Footer2'
 import Header2 from '../../components/Header2'
 import { motion } from 'framer-motion'
-
+import Logins from '../../../public/login.json'
+import Lottie from 'lottie-react'
 
 const Login = () => {
     // Given a number as an input, print out every integer from 1 to that number. However, when the integer is divisible by 2, print out "Fizz"; when it's divisible by 3, print out "Buzz"; when its divisible by both 2 and 3, print "Fizz Buzz"
@@ -58,7 +59,7 @@ const Login = () => {
                         <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="login-button">
-                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/signup'>Don't have an account?</Link>)}
+                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/signup' className="semi-btn">Don't have an account?</Link>)}
                         <button className="login-btn">Login</button>
                     </div>
                 </motion.form>
@@ -78,7 +79,7 @@ const Login = () => {
                         initial="hidden"
                         animate="visible"
                         transition={{ duration: 1.3 }}>
-                        <h1>icon here</h1>
+                        <Lottie className="div" animationData={Logins} />
                     </motion.div>
                 </motion.div>
             </div>
