@@ -4,7 +4,6 @@ import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 
 import authRoutes from "./routes/auth.routes.js"
-import userRoutes from "./routes/user.routes.js"
 
 import connectToMongoDB from "./db/connectToMongoDB.js"
 
@@ -19,7 +18,6 @@ app.use(express.json())
 app.use(cookieParser())
 
 app.use("/api/auth", authRoutes)
-app.use("/api/users", userRoutes)
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")))
 

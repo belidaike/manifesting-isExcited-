@@ -3,6 +3,7 @@ import useSignup from '../../hooks/useSignup'
 import { Link } from 'react-router-dom'
 import Footer2 from '../../components/Footer2'
 import Header2 from '../../components/Header2'
+import { motion } from 'framer-motion'
 
 
 const Signup = () => {
@@ -27,28 +28,47 @@ const Signup = () => {
         <div className='signup-container'>
             <Header2 />
             <div className='signup-content'>
-                <form className='signup-form' onSubmit={handleSubmit}>
+                <motion.form className='signup-form' onSubmit={handleSubmit}
+                    variants={{
+                        hidden: { opacity: 0, x: -500 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 1.3 }}>
                     <h1>Signup</h1>
 
                     <div className="signup-inputs">
-                        <input type="text" placeholder='Fullname' />
-                        <input type="text" placeholder='Username' />
-                        <input type="password" placeholder='Password' />
-                        <input type="password" placeholder='Confirm Password' />
+                        <input type="text" placeholder='Username' value={inputs.username} onChange={(e) => setInputs({ ...inputs, username: e.target.value })} />
+                        <input type="text" placeholder='Username' value={inputs.usernfullNameame} onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })} />
+                        <input type="password" placeholder='Password' value={inputs.password} onChange={(e) => setInputs({ ...inputs, password: e.target.value })} />
+                        <input type="password" placeholder='Password' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
                     </div>
                     <div className="signup-button">
-                        {/* {loading ? <span className='loading loading-spinner text-white'></span> : 'Sign Up'} */}
-                        <Link to='/login'>Already have an account?</Link>
-                        <button className=" signup-btn btn btn-outline">Signup</button>
+                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/login'>Don't have an account?</Link>)}
+                        <button className="signup-btn">Login</button>
                     </div>
-                </form>
+                </motion.form>
 
-                <div className='signup-welcome'>
-                    <h1>Hi friend!</h1>
-                    // icon here
-                </div>
+                <motion.div className='signup-welcome'>
+                    <motion.h1 variants={{
+                        hidden: { opacity: 0, y: -300 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 1.3 }}>How are you friend!</motion.h1>
+                    <motion.div variants={{
+                        hidden: { opacity: 0, y: 300 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 1.3 }}>
+                        <h1>icon here</h1>
+                    </motion.div>
+                </motion.div>
             </div>
-            <span className="loading loading-spinner "></span>
             <Footer2 />
         </div>
     )

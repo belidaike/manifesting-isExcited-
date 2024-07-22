@@ -27,9 +27,9 @@ const Main = ({ similarMovies }) => {
                             <div className="main-figure">
                                 <p>{movie.original_title}</p>
                                 <br />
-                                <small>{formatDate(movie.release_date)}</small>
+                                <small className='small'>{formatDate(movie.release_date)}</small>
                                 <br />
-                                <small>{movie.popularity} views</small>
+                                <small className='small'>{movie.popularity} views</small>
                                 {/* <div className="genre-list">
                                     {movie.genre_ids.map(genreId => {
                                         const genre = genres.find(g => g.id === genreId)

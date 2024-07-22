@@ -10,7 +10,7 @@ const Search = () => {
             <div>
                 <h1>Find Movies, TV shows and more</h1>
             </div>
-            <div className='search-container2'>
+            <div className='search-container2 '>
                 <CiSearch size={25} />
                 <input className='search' placeholder='Search here' value={search} onChange={handleChange} ></input>
             </div>

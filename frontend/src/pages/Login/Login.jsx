@@ -3,6 +3,8 @@ import useLogin from "../../hooks/useLogin"
 import { Link } from 'react-router-dom'
 import Footer2 from '../../components/Footer2'
 import Header2 from '../../components/Header2'
+import { motion } from 'framer-motion'
+
 
 const Login = () => {
     // Given a number as an input, print out every integer from 1 to that number. However, when the integer is divisible by 2, print out "Fizz"; when it's divisible by 3, print out "Buzz"; when its divisible by both 2 and 3, print "Fizz Buzz"
@@ -41,25 +43,44 @@ const Login = () => {
         <div className='login-container'>
             <Header2 />
             <div className='login-content'>
-                <form className='login-form' onSubmit={handleSubmit}>
+                <motion.form className='login-form' onSubmit={handleSubmit}
+                    variants={{
+                        hidden: { opacity: 0, x: 500 },
+                        visible: { opacity: 1, x: 0 }
+                    }}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 1.3 }}>
                     <h1>Login</h1>
 
                     <div className="login-inputs">
-                        <input type="text" placeholder='Username' />
-                        <input type="password" placeholder='Password' />
+                        <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="login-button">
-                        {/* {loading ? <span className='loading loading-spinner text-white'></span> : 'Sign Up'} */}
-                        <Link to='/signup'>Don't have an account?</Link>
-
-                        <button className="login-btn btn btn-outline">Login</button>
+                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/signup'>Don't have an account?</Link>)}
+                        <button className="login-btn">Login</button>
                     </div>
-                </form>
+                </motion.form>
 
-                <div className='login-welcome'>
-                    <h1>Welcome back friend!</h1>
-                    //icon here
-                </div>
+                <motion.div className='login-welcome'>
+                    <motion.h1 variants={{
+                        hidden: { opacity: 0, y: -300 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 1.3 }}>Welcome back friend!</motion.h1>
+                    <motion.div variants={{
+                        hidden: { opacity: 0, y: 300 },
+                        visible: { opacity: 1, y: 0 }
+                    }}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 1.3 }}>
+                        <h1>icon here</h1>
+                    </motion.div>
+                </motion.div>
             </div>
             <Footer2 />
         </div>

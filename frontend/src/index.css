@@ -16,20 +16,26 @@
   --this30: #436850;
   --this10: #FBFADA;
   --thisFont: #ADBC9F;
+  --thisreal30: #1e5e00;
 }
 
-.buttons {
+.buttons,
+.login-btn,
+.signup-btn {
   color: var(--this10);
   border: none;
-  background-color: var(--this30);
   padding: .5rem 1rem;
   border-radius: .3rem;
+  text-align: center;
+  background-color: var(--this30);
 }
 
-.buttons:hover {
-  background-color: var(--this60);
-  transition: all 200ms ease-in;
 
+.buttons:hover,
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: var(--thisreal30);
+  transition: all 300ms ease-in;
 }
 
 h1,
@@ -44,11 +50,14 @@ p {
 
 
 
+
 * {
   margin: 0;
   padding: 0;
   color: var(--this10);
+  box-sizing: border-box;
 }
+
 
 a {
   color: inherit;
@@ -59,6 +68,7 @@ a {
   background-color: #12372A;
   overflow: hidden;
 }
+
 
 /* header */
 header {
@@ -88,6 +98,7 @@ header {
 
 .home-content {
   display: flex;
+  flex-direction: column;
 }
 
 
@@ -95,14 +106,29 @@ main {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 2rem 0;
+}
+
+.small {
+  color: var(--thisFont);
 }
 
 .main-container {
-  margin: 3rem 2rem;
+  margin: 2rem 2rem 5rem 2rem;
   width: 100%;
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  position: relative;
+  min-height: 50vh;
+}
+
+.Nomovie {
+  position: absolute;
+  right: 43%;
+  top: 30%;
+  /* background-color: blue; */
+  font-size: 1.5rem;
 }
 
 .main-container-sim {
@@ -143,25 +169,21 @@ main {
 aside {
   background-color: var(--this60);
   color: black;
-  padding: 3rem 0 0 1.5rem;
+  padding: 5rem 0 0 2rem;
   min-width: 155px;
 }
 
 aside>ul {
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: start;
   gap: 2rem;
-  width: 100%;
 }
 
 aside>ul>li {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: .5rem;
-  width: 100%;
+  align-items: center;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -173,12 +195,13 @@ aside>ul>li:hover {
 /* header2 */
 
 .header2 {
-  /* position: absolute; */
-  align-self: flex-start;
-  position: absolute;
-  top: .5rem;
-  margin: 0 0 0 3rem;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--this60);
 }
+
+
 
 /* login */
 
@@ -186,6 +209,7 @@ aside>ul>li:hover {
   height: 100vh;
   display: flex;
   align-items: center;
+  gap: 5rem;
   justify-content: center;
   flex-direction: column;
 }
@@ -195,6 +219,11 @@ aside>ul>li:hover {
   width: 70%;
   flex-direction: row-reverse;
   height: 55%;
+  box-shadow: 5px 5px 20px black;
+  border-bottom-left-radius: 5em;
+  overflow: hidden;
+  border-top-right-radius: 5em;
+
   /* transition: all 300ms ease-in; */
 }
 
@@ -203,10 +232,12 @@ aside>ul>li:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-top-right-radius: 5em;
 }
 
 .login-form>h1 {
   text-align: center;
+  font-size: 2rem;
 }
 
 .login-inputs {
@@ -229,11 +260,13 @@ aside>ul>li:hover {
 
 .login-welcome {
   width: 100%;
-  background-color: orange;
+  background-color: var(--thisreal30);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  font-size: 2rem;
+
 }
 
 .login-button {
@@ -260,16 +293,24 @@ aside>ul>li:hover {
 
 .signup-container {
   height: 100vh;
+  gap: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 
 .signup-content {
   display: flex;
   width: 70%;
   height: 55%;
+  box-shadow: 5px 5px 20px black;
+  border-bottom-left-radius: 5em;
+  overflow: hidden;
+  border-top-right-radius: 5em;
+
+  /* transition: all 300ms ease-in; */
 }
 
 .signup-form {
@@ -277,10 +318,13 @@ aside>ul>li:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
+  border-top-right-radius: 5em;
 }
 
 .signup-form>h1 {
   text-align: center;
+  font-size: 2rem;
 }
 
 .signup-inputs {
@@ -295,6 +339,7 @@ aside>ul>li:hover {
   width: 80%;
   background-color: var(--this30);
   border: none;
+  color: var(--this10);
   padding: .3rem;
   border-radius: .2rem;
   outline: none;
@@ -302,8 +347,9 @@ aside>ul>li:hover {
 
 .signup-welcome {
   width: 100%;
-  background-color: orange;
+  background-color: var(--thisreal30);
   display: flex;
+  font-size: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -315,18 +361,17 @@ aside>ul>li:hover {
   align-items: center;
 }
 
-.signup-btn {
-  width: 80%;
-  color: var(--this10);
-  border: none;
-  background-color: var(--this30);
-}
-
 .signup-button>a {
-  align-items: start;
   width: 80%;
   display: flex;
   justify-content: start;
+}
+
+.signup-btn {
+  border: none;
+  width: 80%;
+  color: var(--this10);
+  background-color: var(--this30);
 }
 
 /* footer */
@@ -359,6 +404,55 @@ footer {
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
+}
+
+.genre-list {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.genre-fantasy {
+  background-color: #8A2BE2;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-adventure {
+  background-color: #228B22;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-action {
+  background-color: #FF4500;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-comedy {
+  background-color: #FFD700;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-family {
+  background-color: #FF6F61;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-animation {
+  background-color: #FFCC00;
+  padding: 7px;
+  border-radius: 2rem;
+}
+
+.genre-science {
+  background-color: #00CED1;
+  padding: 7px;
+  border-radius: 2rem;
 }
 
 .s-movie {
@@ -413,80 +507,266 @@ footer {
   gap: 2rem;
   align-items: center;
   flex-direction: column;
-  background-color: var(--this30);
-  padding: 2rem 0;
+  background-color: var(--thisreal30);
+  padding: 3rem 0;
+}
 
+.search-container>div>h1 {
+  font-size: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: .3rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .search-container>.search-container2 {
-  width: 100%;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .search-container>.search-container2>svg {
   position: absolute;
-  left: 31%;
-
+  top: 2.3rem;
+  z-index: 1;
+  left: .9rem;
 }
 
 .search-container>.search-container2>.search {
   outline: none;
   border: none;
-  background-color: var(--this60);
-  width: 40%;
+  background-color: var(--this30);
+  width: 100%;
   padding: .5rem .5rem .5rem 3rem;
   border-radius: .5rem;
-}
-
-
-.circle {
   position: absolute;
-  width: 3em;
-  height: 3em;
-  background-color: white;
-  border-radius: 50%;
-  animation: glow-blue 2s ease-in-out infinite alternate, move 10s linear infinite;
+  top: 1.7rem;
 }
-
-
 
 
 
 
 /* 475 640 768 1024 1280 1536 */
+@media(max-width: 473px) {
+  .search-container>div>h1 {
+    font-size: 1.5rem;
+  }
 
-@media(min-width: 475px) {}
+  aside>ul {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-@media(min-width: 640px) {}
+  .header2>a>img {
+    width: 70px !important;
+  }
 
-@media(min-width: 768px) {}
+  .login-welcome {
+    display: none;
+  }
 
-@media(min-width: 1024px) {
-  * {
-    /* background-color: brown; */
+  .signup-welcome {
+    display: none;
   }
 
   .s-movie-content-1-img-container {
-    width: 400px;
+    width: 300px;
+  }
 
+
+  .login-container {
+    gap: 2rem;
+  }
+
+  .signup-container {
+    gap: 2rem;
+  }
+
+  .s-movie-container {
+    width: 80%;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .s-movie-content-2-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 1.5rem;
+  }
+
+  .s-movie {
+    flex-direction: column;
   }
 }
 
-@media(min-width: 1280px) {
-  /* * {
-    background-color: orange;
-  } */
+@media(min-width: 475px) {
+  * {
+    /* background-color: pink; */
+  }
+
+  .Nomovie {
+    position: absolute;
+    right: 26%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 2rem;
+  }
+
+  .s-movie {
+    flex-direction: column;
+  }
 
   .s-movie-content-1-img-container {
-    width: 500px;
+    width: 320px;
+  }
+}
+
+@media(min-width: 640px) {
+  * {
+    /* background-color: red; */
+  }
+
+
+
+  .s-movie-content-1-img-container {
+    width: 340px;
+  }
+
+  .s-movie {
+    flex-direction: column;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 2.5rem;
+  }
+
+  .Nomovie {
+    position: absolute;
+    right: 29%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
+}
+
+@media(min-width: 768px) {
+  * {
+    /* background-color: blue; */
+  }
+
+  .s-movie {
+    flex-direction: column;
+
+  }
+
+  .s-movie-content-1-img-container {
+    width: 360px;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 3rem;
+  }
+
+  .Nomovie {
+    position: absolute;
+    right: 37%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
+
+
+
+}
+
+@media(max-width: 1023px) {
+  .login-welcome {
+    display: none;
+  }
+
+  .header2>a>img {
+    width: 100px;
+  }
+
+  .header2 {
+    padding: .5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--this60);
+  }
+
+  .signup-welcome {
+    display: none;
+  }
+}
+
+@media(min-width: 1024px) {
+  .header2 {
+    position: absolute;
+    top: .5rem;
+    left: 0rem;
+  }
+
+  .s-movie {
+    flex-direction: column;
+  }
+
+  .s-movie-content-1-img-container {
+    width: 380px;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 3.5rem;
+  }
+
+  .Nomovie {
+    right: 40.5%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media(min-width: 1280px) {
+  .s-movie {
+    flex-direction: row;
+  }
+
+  .s-movie-content-2>h1 {
+    font-size: 4rem;
+  }
+
+  .Nomovie {
+    right: 41%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
+
+  .s-movie-content-1-img-container {
+    width: 450px;
   }
 
 }
 
 @media(min-width: 1536px) {
-  /* * {
-    background-color: blue;
-  } */
+  * {
+    /* background-color: blue; */
+  }
+
+  .Nomovie {
+    right: 44%;
+    top: 30%;
+    font-size: 1.5rem;
+  }
 }

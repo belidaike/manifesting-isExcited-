@@ -1,15 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { Context } from '../../context/Context'
 import Main from '../Home/Main'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import useDate from '../../hooks/useDate'
 
 const Singles = () => {
     const { id } = useParams()
-    const { movies, loading } = useContext(Context)
-    const [similarMovies, setSimilarMovies] = useState([])
+    const { formatDate } = useDate()
 
+    const { movies, loading, genres } = useContext(Context)
+    const [similarMovies, setSimilarMovies] = useState([])
+    const { pathname } = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
     useEffect(() => {
         if (movies.length > 0) {
             const movie = movies.find((movie) => movie.id === parseInt(id))
@@ -52,17 +58,25 @@ const Singles = () => {
                         <h1>{movie.original_title}</h1>
                         <div className='s-movie-content-2-details'>
                             <div>
-                                <div>{movie.popularity} views</div>
-                                <div>rating</div>
+                                <div className='small'>{movie.popularity} views</div>
+                                <small className='small'>{formatDate(movie.release_date)}</small>
                             </div>
-                            <div>star</div>
+                        </div>
+                        <div className="genre-list">
+                            {movie.genre_ids.map(genreId => {
+                                const genre = genres.find(g => g.id === genreId);
+                                return genre ? (
+                                    <span key={genre.id} className={`genre-${genre.name.toLowerCase()}`}>
+                                        {genre.name}
+                                    </span>
+                                ) : null;
+                            })}
                         </div>
                         <div className="summary">
-                            <p>{movie.overview}</p>
+                            <p className='small'>{movie.overview}</p>
                         </div>
                         <div className="buttons">
-                            <button>button1</button>
-                            <button>button2</button>
+                            <button>Watch now</button>
                         </div>
                     </div>
                 </div>
