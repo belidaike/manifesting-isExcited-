@@ -46,8 +46,8 @@ const Signup = () => {
                         <input type="password" placeholder='Password' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
                     </div>
                     <div className="signup-button">
-                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/login' className='semi-btn'>Already have an account?</Link>)}
-                        <button className="signup-btn">Signup</button>
+                        <Link to='/login' className='semi-btn'>Already have an account?</Link>
+                        {loading ? <button className="signup-btn loading loading-spinner">Signup</button> : <button className="signup-btn">Signup</button>}
                     </div>
                 </motion.form>
 

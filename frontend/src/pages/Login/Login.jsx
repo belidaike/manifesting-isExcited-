@@ -59,8 +59,8 @@ const Login = () => {
                         <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="login-button">
-                        {loading ? <span className='loading loading-spinner text-white'></span> : (<Link to='/signup' className="semi-btn">Don't have an account?</Link>)}
-                        <button className="login-btn">Login</button>
+                        <Link to='/signup' className="semi-btn">Don't have an account?</Link>
+                        {loading ? <button className="login-btn loading loading-spinner">Login</button> : <button className="login-btn">Login</button>}
                     </div>
                 </motion.form>
 
