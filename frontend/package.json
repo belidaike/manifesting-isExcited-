@@ -1,13 +1,13 @@
 {
-  "name": "Modern Movie",
+  "name": "newproject",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "node_modules/.bin/vite build",
+    "dev": "npx vite",
+    "build": "npx vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "node_modules/.bin/vite preview"
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "axios": "^1.6.8",
