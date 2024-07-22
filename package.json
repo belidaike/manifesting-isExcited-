@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon backend/index.js",
     "start": "node backend/index.js",
-    "build": "npm install && cd frontend && npm install && npm run build"
+    "build": "npm install --production=false && cd frontend && npm install --production=false && npm run build"
   },
   "type": "module",
   "keywords": [],
