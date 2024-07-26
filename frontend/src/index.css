@@ -133,35 +133,11 @@ main {
   gap: 2rem 0;
 }
 
-.popularCSSDefault {
+.CSSDefault {
   padding: .5rem;
 }
 
-.popularCSS {
-  border-bottom: 5px solid orange;
-}
-
-.latestCSSDefault {
-  padding: .5rem;
-}
-
-.latestCSS {
-  border-bottom: 5px solid orange;
-}
-
-.oldestCSSDefault {
-  padding: .5rem;
-}
-
-.oldestCSS {
-  border-bottom: 5px solid orange;
-}
-
-.leastPCSSDefault {
-  padding: .5rem;
-}
-
-.leastPCSS {
+.underLineCSS {
   border-bottom: 5px solid orange;
 }
 
