@@ -6,11 +6,11 @@ const Footer = () => {
         <footer>
             <div className="footer-container">
                 <div className="ft1">
-                    <h1><b>Modern Movie is made by Ike Belida</b></h1>
+                    <h1><b>About </b><i>Modern Movie</i></h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptatum quas sunt quo tempore dolore, dolores totam tempora? Veritatis aliquid quas itaque sit, impedit vero commodi iure assumenda aperiam tempora!</p>
                 </div>
                 <div className="ft2">
-                    <h1>About us</h1>
+                    <h1>Contact us</h1>
                     <p><b>Contact no:</b> <em>+63910 8231 982</em></p>
                     <p><b>Tell no:</b> <em>123-456-7890</em></p>
                 </div>

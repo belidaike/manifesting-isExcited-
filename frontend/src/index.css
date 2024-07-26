@@ -133,6 +133,38 @@ main {
   gap: 2rem 0;
 }
 
+.popularCSSDefault {
+  padding: .5rem;
+}
+
+.popularCSS {
+  border-bottom: 5px solid orange;
+}
+
+.latestCSSDefault {
+  padding: .5rem;
+}
+
+.latestCSS {
+  border-bottom: 5px solid orange;
+}
+
+.oldestCSSDefault {
+  padding: .5rem;
+}
+
+.oldestCSS {
+  border-bottom: 5px solid orange;
+}
+
+.leastPCSSDefault {
+  padding: .5rem;
+}
+
+.leastPCSS {
+  border-bottom: 5px solid orange;
+}
+
 .small {
   color: var(--thisFont);
 }
@@ -288,8 +320,8 @@ aside>ul>li:hover {
   background-color: var(--this30);
   border: none;
   color: var(--this10);
-  padding: .3rem;
-  border-radius: .2rem;
+  padding: .5rem .9rem;
+  border-radius: .3rem;
   outline: none;
 }
 
@@ -323,6 +355,7 @@ aside>ul>li:hover {
   align-items: center;
 }
 
+
 .login-button>a {
   width: 80%;
   display: flex;
@@ -336,6 +369,9 @@ aside>ul>li:hover {
   background-color: var(--this30);
 }
 
+.login-btn-spinner {
+  color: var(--this10);
+}
 
 /* signup */
 
@@ -396,8 +432,8 @@ aside>ul>li:hover {
   background-color: var(--this30);
   border: none;
   color: var(--this10);
-  padding: .3rem;
-  border-radius: .2rem;
+  padding: .5rem .9rem;
+  border-radius: .3rem;
   outline: none;
 }
 
@@ -426,6 +462,10 @@ aside>ul>li:hover {
   align-items: center;
 }
 
+.signup-btn-spinner {
+  color: var(--this10);
+}
+
 .signup-button>a {
   width: 80%;
   display: flex;
@@ -442,7 +482,7 @@ aside>ul>li:hover {
 /* footer */
 footer {
   background-color: var(--this30);
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .footer-container {
@@ -515,7 +555,7 @@ em {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem 0 0 0;
+  margin: 2rem 0 0 0;
   gap: 1rem;
 
 }

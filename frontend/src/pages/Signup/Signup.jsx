@@ -40,14 +40,14 @@ const Signup = () => {
                     <h1>Signup</h1>
 
                     <div className="signup-inputs">
+                        <input type="text" placeholder='Fullname' value={inputs.fullName} onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })} />
                         <input type="text" placeholder='Username' value={inputs.username} onChange={(e) => setInputs({ ...inputs, username: e.target.value })} />
-                        <input type="text" placeholder='Username' value={inputs.usernfullNameame} onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })} />
                         <input type="password" placeholder='Password' value={inputs.password} onChange={(e) => setInputs({ ...inputs, password: e.target.value })} />
-                        <input type="password" placeholder='Password' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
+                        <input type="password" placeholder='Confirm Password' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
                     </div>
                     <div className="signup-button">
                         <Link to='/login' className='semi-btn'>Already have an account?</Link>
-                        {loading ? <button className="signup-btn loading loading-spinner">Signup</button> : <button className="signup-btn">Signup</button>}
+                        {loading ? <button className="signup-btn-spinner loading loading-spinner"></button> : <button className="signup-btn">Signup</button>}
                     </div>
                 </motion.form>
 

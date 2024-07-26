@@ -60,7 +60,7 @@ const Login = () => {
                     </div>
                     <div className="login-button">
                         <Link to='/signup' className="semi-btn">Don't have an account?</Link>
-                        {loading ? <button className="login-btn loading loading-spinner">Login</button> : <button className="login-btn">Login</button>}
+                        {loading ? <button className="login-btn-spinner loading loading-spinner">Login</button> : <button className="login-btn">Login</button>}
                     </div>
                 </motion.form>
 
