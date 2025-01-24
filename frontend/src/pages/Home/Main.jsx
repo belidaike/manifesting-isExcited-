@@ -30,7 +30,7 @@ const Main = ({ similarMovies }) => {
                                 <br />
                                 <small className='small'>{formatDate(movie.release_date)}</small>
                                 <br />
-                                <small className='small'>{movie.popularity} views</small>
+                                <small className='small'>{movie.popularity.toLocaleString()} views</small>
                                 {/* <div className="genre-list">
                                     {movie.genre_ids.map(genreId => {
                                         const genre = genres.find(g => g.id === genreId)
@@ -41,7 +41,7 @@ const Main = ({ similarMovies }) => {
                         </div>
                     ))
                 ) : (
-                    <h1 className='Nomovie'>No movies available</h1>
+                    <h1 className='Nomovie'>No movies available.</h1>
                 )}
             </div>
         </main>
