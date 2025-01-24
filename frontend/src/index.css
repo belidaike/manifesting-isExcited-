@@ -183,6 +183,10 @@ main {
   letter-spacing: .1rem;
   font-size: 1.5rem;
   font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main-img-container {
@@ -561,46 +565,84 @@ em {
 }
 
 .genre-fantasy {
-  background-color: #8A2BE2;
-  padding: 7px;
+  background-color: #9370DB;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-adventure {
   background-color: #228B22;
-  padding: 7px;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-action {
-  background-color: #FF4500;
-  padding: 7px;
+  background-color: #FF6347;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-comedy {
   background-color: #FFD700;
-  padding: 7px;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-family {
-  background-color: #FF6F61;
-  padding: 7px;
+  background-color: #FFB6C1;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-animation {
-  background-color: #FFCC00;
-  padding: 7px;
+  background-color: #3ecfc1;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
 
 .genre-science {
-  background-color: #00CED1;
-  padding: 7px;
+  background-color: #00dd93;
+  padding: 7px 15px;
   border-radius: 2rem;
 }
+
+.genre-romance {
+  background-color: #FF69B4;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
+.genre-drama {
+  background-color: #8B0000;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
+.genre-thriller {
+  background-color: #800080;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
+.genre-music {
+  background-color: #1E90FF;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
+.genre-horror {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
+.genre-crime {
+  background-color: #696969;
+  padding: 7px 15px;
+  border-radius: 2rem;
+}
+
 
 .s-movie {
   display: flex;

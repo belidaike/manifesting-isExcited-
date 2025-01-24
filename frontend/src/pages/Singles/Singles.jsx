@@ -5,6 +5,7 @@ import Main from '../Home/Main'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import useDate from '../../hooks/useDate'
+import logo from '/logo.png'
 
 const Singles = () => {
     const { id } = useParams()
@@ -81,10 +82,11 @@ const Singles = () => {
                     </div>
                 </div>
                 <div className="s-movie-umightlike">
-                    <h1>Similar movies you might like</h1>
+                    <h1 style={{ fontSize: "1.5rem", fontFamily: "monospace", margin: "50px" }}>Similar movies you might like</h1>
                     <Main similarMovies={similarMovies} />
                 </div>
             </div>
+            <img src={logo} alt="" style={{ color: "blue" }} />
             <Footer />
         </>
 

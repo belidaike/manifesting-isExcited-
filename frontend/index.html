@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="logo.png" />
+  <link id="favicon" rel="icon" type="image/svg+xml" href="logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ModernMovie</title>
 </head>
@@ -11,6 +11,43 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <script>
+    const changeFaviconColor = async () => {
+      try {
+        const favicon = document.getElementById("favicon");
+
+        // Fetch the SVG content
+        const response = await fetch("logo.svg");
+        if (!response.ok) {
+          console.error("Failed to fetch SVG");
+          return;
+        }
+
+        const svgContent = await response.text();
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgContent, "image/svg+xml");
+
+        const svgElement = svgDoc.querySelector("svg");
+
+        // Set the color to black
+        svgElement.querySelectorAll("[fill]").forEach((element) => {
+          element.setAttribute("fill", "black");
+        });
+
+        // Create a new Blob URL for the updated SVG
+        const blob = new Blob([svgDoc.documentElement.outerHTML], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+
+        // Update favicon
+        favicon.href = url;
+      } catch (error) {
+        console.error("Error updating favicon:", error);
+      }
+    };
+
+    changeFaviconColor();
+  </script>
 </body>
 
 </html>
